@@ -16,7 +16,7 @@ header{
     align-items: center;
     background: #23252B;
     padding: 0 50px;
-    line-height: 75px;
+    line-height: 60px;
     transition: 0.6s;
 }
 header .logo{
@@ -25,7 +25,16 @@ header .logo{
     align-items: center;
 }
 .logo .menu-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     filter: invert(1);
+    cursor: pointer;
+}
+.logo .icon img {
+    position: relative;
+    max-width: 150px;
+    display: flex;
 }
 header .menu ul{
     display: flex;
@@ -48,7 +57,7 @@ header .menu ul{
 .menu-item .sub-menu{
     position: absolute;
     display: block;
-    top: 75px;
+    top: 84px;
     background: #23252B;
     line-height: 40px;
     border-radius: 0 0 8px 8px;
@@ -80,6 +89,19 @@ header .menu ul{
     font-size: 1em;
     padding: 15px 20px;
 }
+@media(max-width:370px){
+    header .logo{
+        gap: 5px;
+    }
+    .cart,.login{
+        display: none;
+    }
+    .menu-item i{
+        margin: 0;
+    }
+}
+
+
 @media(max-width:600px){
     header{
         padding: 8px 15px;
@@ -94,6 +116,9 @@ header .menu ul{
         display: none;
     }
     .fas.fa-angle-down{
+        display: none;
+    }
+    .menu-item .sub-menu{
         display: none;
     }
     
@@ -113,6 +138,10 @@ header .menu ul{
     .fas.fa-angle-down{
         display: none;
     }
+    .menu-item .sub-menu{
+        display: none;
+    }
+        
 
 
 }
