@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>imagineAiry</title>
+    <link rel="icon" href="Images/Logo ImagineAIry.jpg" type="image/x-icon">
+    <title>ImagineAiry</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" charset="UTF-8"></script>
@@ -12,27 +13,64 @@
 <body>
     <header>
         <div class="logo">
-            <div class="menu-btn">
-            <svg width="40" height="17" xmlns="http://www.w3.org/2000/svg"><g fill="#00001A" fill-rule="evenodd"><path d="M0 0h40v3H0zM0 7h40v3H0zM0 14h40v3H0z"/><path d="M0 0h40v3H0z"/></g></svg>
-            </div>
-            <div class="icon">
-            <a href="#"><img src="Images/Logo ImagineAIry.png" alt="logo"></a>
-            </div>
-    </div>
+        <div class="menu-btn">
+                <svg width="40" height="17" xmlns="http://www.w3.org/2000/svg"><g fill="#fff" fill-rule="evenodd"><path d="M0 0h40v3H0zM0 7h40v3H0zM0 14h40v3H0z"/><path d="M0 0h40v3H0z"/></g></svg>
+                <div class="sideNavbar">
+                    <ul class="sideNavbar-Menu">
+                        <li class="sideNavbar-item">
+                            <a href="#">
+                            <span class="menu-icon"><i class="fas fa-home"></i></span>
+                            <span class="text">Home</span>
+                        </a>
+                        </li>
+                        <li class="sideNavbar-item">
+                            <a href="#">
+                            <span class="menu-icon"><i class="fas fa-file"></i></span>
+                            <span class="text">Blogs</span>
+                        </a>
+                        </li>
+                        <li class="sideNavbar-item">
+                            <a href="#">
+                            <span class="menu-icon"><i class="fas fa-edit"></i></span>
+                            <span class="text">Edit</span>
+                        </a>
+                        </li>
+                        <li class="sideNavbar-item">
+                            <a href="#">
+                            <span class="menu-icon"><i class="fa-solid fa-circle-info"></i></span>
+                            <span class="text">Help</span>
+                        </a>
+                        </li>
+                    </ul>
+                </div>
+        </div>
+        <div class="icon">
+         <a href="#"><img src="Images/Logo ImagineAIry.png" alt="logo"></a>
+        </div>
+        </div>
     <div class="menu collections">
         <ul>
             <li class="menu-item"><a href="#">Photos</a></li>
             <li class="menu-item"><a href="#">Vectors</a></li>
             <li class="menu-item"><a href="#">Prime Collections</a></li>
-        </ul>
+        </ul>    
     </div>
     <div class="menu">
         <ul>
+            <li class="menu-item mobile">
+                <a href="#"><i class="fa-solid fa-image"></i><i class="fas fa-angle-down"></i></a>
+                <ul class="sub-menu">
+                    <li class="sub-item"><a href="#">Photos</a></li>
+                    <li class="sub-item"><a href="#">Vectors</a></li>
+                    <li class="sub-item"><a href="#">Prime Collections</a></li>
+                </ul>
+                
+            </li>
             <li class="menu-item"><a href="#"><i class="fas fa-shopping-cart"></i><span class="cart">cart</span></a></li>
             <li class="menu-item">
                 <a href="#"><i class="fas fa-user"></i><span class="login">login</span><i class="fas fa-angle-down"></i></a>
                 <ul class="sub-menu">
-                    <li class="sub-item"><a href="#">New<i class="fas fa-question-circle"></i>SignUp</a></li>
+                    <li class="sub-item"><a href="#">SignUp</a></li>
                     <li class="sub-item"><a href="#">My profile</a></li>
                     <li class="sub-item"><a href="#">Orders</a></li>
                     <li class="sub-item"><a href="#">WishList</a></li>
@@ -43,8 +81,6 @@
     </div>
     </header>
 
-<script src="index.js" charset="UTF-8"></script>
-<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>   
+<script src="index.js" charset="UTF-8"></script>  
 </body>
 </html>
