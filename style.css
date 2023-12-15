@@ -15,7 +15,7 @@ header{
     justify-content: space-between;
     align-items: center;
     background: #23252B;
-    padding: 0 30px;
+    padding: 0 50px;
     line-height: 60px;
     transition: 0.6s;
 }
@@ -24,6 +24,10 @@ header .logo{
     gap: 20px;
     align-items: center;
 }
+.logo .menu-btn svg{
+    display: none;
+}
+
 .logo .menu-btn{
     position: relative;
     display: flex;
@@ -33,17 +37,14 @@ header .logo{
 }
 .menu-btn .sideNavbar{
     position: fixed;
-    width: 90px;
+    width: 70px;
     height: 100vh;
-    top: 83px;
+    top: 73px;
     left: 0;
     background:#23252B;
     padding:90px 0;
     transition: 0.5s;
     display: block;
-}
-.menu-btn .sideNavbar.active{
-    width: 15%;
 }
 .sideNavbar .sideNavbar-Menu{
     display: flex;
@@ -54,7 +55,6 @@ header .logo{
 .sideNavbar .sideNavbar-Menu .sideNavbar-item{
     position: relative;
     width: 100%;
-    height: 60px;
     padding: 0 15px;
     transition: 0.3s;
 }
@@ -62,13 +62,9 @@ header .logo{
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    text-align: center;
+    flex-direction: column;
     color: #fff;
     transition: 0.3s;
-}
-.sideNavbar.active .sideNavbar-Menu .sideNavbar-item a .text:hover{
-    color: #469DFF;
 }
 .sideNavbar-item a .menu-icon{
     position: relative;
@@ -83,39 +79,40 @@ header .logo{
     font-size: 1.4em;
 }
 .sideNavbar-item a .menu-icon:hover{
-    color: #110111;
-    background: #fefefe;
-}
-.sideNavbar.active .sideNavbar-Menu .sideNavbar-item a .menu-icon:hover{
-    background: none;
-    color: #fff;
+    color: #4080EF;
 }
 .sideNavbar-item a .text{
-    position: relative;
-    padding: 0 15px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    opacity: 0;
-    visibility: hidden;
-    font-size: 1em;
-    letter-spacing: 1px;
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+    color: #fff;
+    padding: 5px;
+    white-space: nowrap;
+    border-radius: 5px;
     transition: 0.3s;
 }
-.sideNavbar.active .sideNavbar-item a .text{
-    opacity: 1;
-    visibility: visible ;
+.sideNavbar-item:hover .text {
+    display: inline-block;
+    background: #23252B;
+}
+
+.sideNavbar-item a{
+    color: #469DFF;
 }
 .logo .icon img {
     position: relative;
-    max-width: 150px;
+    max-width: 130px;
     display: flex;
 }
 header .menu{
     position: relative;
+    line-height: 65px;
 }
 
 header .menu ul{
+    position: relative;
     display: flex;
     justify-content: center;
     user-select: none;
@@ -137,7 +134,7 @@ header .menu ul{
 .menu-item .sub-menu{
     position: absolute;
     display: block;
-    top: 70px;
+    top: 64px;
     right: 0;
     background: #23252B;
     line-height: 40px;
@@ -146,9 +143,12 @@ header .menu ul{
     pointer-events: none;
     opacity: 0;
     transition: 0.3s;
+    transform: translateY(20px);
+    transition-property: transform, opacity;
 }
 .menu-item:hover .sub-menu{
     pointer-events: all;
+    transform: translateY(0);
     opacity: 1;
 }
 .menu-item .sub-menu .sub-item{
@@ -157,16 +157,16 @@ header .menu ul{
     cursor: pointer;
     box-shadow: inset 0px -30px 5px -30px rgba(255, 255, 255, 0.2);
 }
+.menu-item .sub-menu .sub-item a{
+    color: #fff;
+    font-size: 1em;
+    padding: 15px 20px;
+}
 .menu-item .sub-menu .sub-item:hover{
     background: #4080EF;
 }
 .menu-item .sub-menu .sub-item:last-child:hover{
     border-radius: 0 0 8px 8px;
-}
-.menu-item .sub-menu .sub-item a{
-    color: #fff;
-    font-size: 1em;
-    padding: 15px 20px;
 }
 .mobile{
     display: none;
@@ -214,7 +214,7 @@ header .menu ul{
     font-size: 1.5em;
     margin: 0 30px;
     line-height: 40px;
-    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .active {
@@ -228,11 +228,12 @@ header .menu ul{
         gap: 5px;
     }
     .logo .menu-btn svg{
+        display: block;
         width: 20px;
     }
     .menu-btn .sideNavbar{
         position: fixed;
-        min-width: 190px;
+        min-width: 150px;
         height: 100vh;
         top: 60px;
         left: -100%;
@@ -248,11 +249,20 @@ header .menu ul{
         left: 0;
         visibility: visible;
     }
+    .sideNavbar .sideNavbar-Menu .sideNavbar-item a{
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+    }
     .sideNavbar-item a .menu-icon{
         font-size: 1em;
     }
     .sideNavbar-item a .text{
-        font-size: 0.8em;
+        display:inline-block;
+        left: 50%;
+    }
+    .sideNavbar-item a .text:hover{
+        color: #469DFF;
     }
     .icon a img{
         width: 100px;
@@ -294,13 +304,15 @@ header .menu ul{
 @media only screen and (min-width: 768px) and (max-width: 991px) {
     header{
         padding: 0 30px;
-        line-height: 60px;
+    }
+    .logo .menu-btn svg{
+        display: block;
     }
     .menu-btn .sideNavbar{
         position: fixed;
-        min-width: 190px;
+        min-width: 150px;
         height: 100vh;
-        top: 83px;
+        top: 73px;
         left: -100%;
         background: #23252B;
         padding:90px 0;
@@ -314,22 +326,24 @@ header .menu ul{
         left: 0;
         visibility: visible;
     }
+    .sideNavbar .sideNavbar-Menu .sideNavbar-item a{
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    .sideNavbar-item a .text{
+        display:inline-block;
+        left: 50%;
+    }
+    .sideNavbar-item a .text:hover{
+        color: #469DFF;
+    }
     .menu-item a{
         margin: 7px;
         padding: 10px;
     }
     .menu-item.mobile .sub-menu{
-        position: absolute;
-        display: block;
-        top: 70px;
-        right: 0;
-        background: #23252B;
-        line-height: 40px;
-        border-radius: 0 0 8px 8px;
-        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
-        pointer-events: none;
-        opacity: 0;
-        transition: 0.3s;
+        top: 64px;
     }
     .mobile{
         display: block;
